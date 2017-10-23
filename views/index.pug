@@ -1,0 +1,38 @@
+extends layout
+
+block content
+   - var Team = " "
+   - var Task = " "
+    script.
+        var saveTeamTask = function(team,task) {
+            console.log('WORKING');
+            localStorage.setItem('*Team'+ team, {Team: team});
+            localStorage.setItem('*Task' + task, {Task: task})
+        }
+        var onChangeTeam = function(n) {
+            console.log(n);
+            Team = n;
+        }
+        var onChangeTask = function(n){
+            console.log(n);
+            Task = n;
+        }
+        
+    div.ui.container.textGen
+        div.ui.form
+            div.two.fields
+                div.field
+                    label Team
+                    input(
+                        type='text'
+                        placeholder='Team'
+                        onchange="onChangeTeam(this.value)"
+                        )
+                div.field
+                    label Task
+                    input(
+                        type='text'
+                        placeholder='Task'
+                        onchange="onChangeTask(this.value)"
+                    )
+        button.ui.submit.primary.button(onclick="saveTeamTask(Team,Task)") Save

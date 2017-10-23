@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  head
+    title= `Test Runner App`
+    link(rel='stylesheet', href='/dist/style.css')
+    link(rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css")
+    
+  body
+    block header
+      header.top
+        div.ui.container
+        div.navContainer
+            a(href="/")
+                img.nav-img(src='/images/Logo.png' alt="Logo")
+            a.link(href="/configurationList") Configuration List
+            a.link(href="/evaluationList")  Evaluation List
+            a.link(href="/evaluationForm")  Create Evaluation
+
+  .content
+    block content
+    p This is the default!
+
+  block scripts
+    script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
+    script(src="semantic/dist/semantic.min.js")
